@@ -232,7 +232,7 @@ $have_ships = false;
 foreach ($reslist['fleet'] as $n => $i) {
     if ($planet[$resource[$i]] > 0) {
         $page .= "<tr height=\"20\">";
-        $page .= "<th><a title=\"". $lang['fl_fleetspeed'] /*. $CurrentShipSpeed*/ ."\">" . $lang['tech'][$i] . "</a></th>";
+        $page .= "<th><a title=\"". $lang['fl_fleetspeed'] /*. $CurrentShipSpeed*/ ."\">" . $lang['res']['fleet'][$i] . "</a></th>";
         $page .= "<th>". pretty_number ($planet[$resource[$i]]);
         $ShipData .= "<input type=\"hidden\" name=\"maxship[". $i ."]\" value=\"". $planet[$resource[$i]] ."\" />";
         $ShipData .= "<input type=\"hidden\" name=\"consumption[". $i ."]\" value=\"". GetShipConsumption ( $i, $user ) ."\" />";
@@ -244,7 +244,7 @@ foreach ($reslist['fleet'] as $n => $i) {
             $page .= "<th></th><th></th>";
         } else {
             $page .= "<th><a href=\"javascript:maxShip('ship[". $i ."]'); shortInfo();\">".$lang['fl_selmax']."</a> </th>";
-            $page .= "<th><input name=\"ship[". $i ."]\" size=\"10\" value=\"0\" onfocus=\"javascript:if(this.value == '0') this.value='';\" onblur=\"javascript:if(this.value == '') this.value='0';\" alt=\"". $lang['tech'][$i] . $planet[$resource[$i]] ."\" onChange=\"shortInfo()\" onKeyUp=\"shortInfo()\" /></th>";
+            $page .= "<th><input name=\"ship[". $i ."]\" size=\"10\" value=\"0\" onfocus=\"javascript:if(this.value == '0') this.value='';\" onblur=\"javascript:if(this.value == '') this.value='0';\" alt=\"". $lang['res']['fleet'][$i] . $planet[$resource[$i]] ."\" onChange=\"shortInfo()\" onKeyUp=\"shortInfo()\" /></th>";
         }
         $page .= "</tr>";
         $have_ships = true;
